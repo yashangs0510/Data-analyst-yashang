@@ -8,7 +8,5 @@
 1-	Data Collection and Preparation: 
 o	Load the dataset using data analysis tools: Secure Storage Setup (S3 Bucket) used
 o	Performed data cleaning to address missing values, correct data types, and remove duplicates: AWS Glue DataBrew service used
-2-	Descriptive Statistics:
-my Business license data is collected and inserted into the Amazon S3 bucket 'cov-raw-mah'. Within the subdirectories, the data is stored by year, month, and week for retrieval in both CSV and JSON format
-A dedicated security group `COV-VS-Mah` managed access rules, ensuring secure connectivity for compute instances during processing. IAM roles and access analyzers monitor data interactions. 
-AWS Glue DataBrew was used to profile and clean the business license dataset. The job succeeded with 100% valid values and no missing data across 22 columns. A transformation recipe was applied and executed successfully, producing two clean outputs for analytics, ensuring high data quality and consistency for further processing.
+
+
