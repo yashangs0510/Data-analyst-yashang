@@ -20,6 +20,13 @@ The data was uploaded to an AWS S3 bucket as the raw input for the pipeline.
 
 ### 1. Data Collection and Preparation
 
+## Documentation Contribution
+- Contributed to **data lake architecture and analysis documentation**
+- Documentation covers:
+  - Tagging strategy  
+  - Storage class policies  
+  - Mapping of business questions (e.g., sentiment-performance correlation)
+
 - *Load the dataset using data analysis tools:* Secure Storage Setup (S3 Bucket) used
 - ## Folder Structure in S3
 - Set up **nine categorized folders** for structured HR datasets
@@ -30,21 +37,16 @@ The data was uploaded to an AWS S3 bucket as the raw input for the pipeline.
 
 ![image alt](https://github.com/yashangs0510/Data-analyst-yashang/blob/c128efd10a7148e9ad777121aaa424e33b6dd19f/Screenshot%202025-06-22%20111848.png)
 
+## Security Configuration
+- Configured **security group** for instance access and data flow
+
+![image alt](https://github.com/yashangs0510/Data-analyst-yashang/blob/6f8ad8aaa53b561dccddf0eca38febfb367d1d59/Images/Screenshot%202025-06-22%20114547.png)
+
 - ## EC2 Instance Setup
 - Launched EC2 instance: **HRVS-MAH**
 - Attached a **30 GiB EBS** volume
 
 ![image alt](https://github.com/yashangs0510/Data-analyst-yashang/blob/6f8ad8aaa53b561dccddf0eca38febfb367d1d59/Images/Screenshot%202025-06-22%20114414.png)
 
-## Security Configuration
-- Configured **security group** for instance access and data flow
 
-![image alt](https://github.com/yashangs0510/Data-analyst-yashang/blob/6f8ad8aaa53b561dccddf0eca38febfb367d1d59/Images/Screenshot%202025-06-22%20114547.png)
-
-## Documentation Contribution
-- Contributed to **data lake architecture and analysis documentation**
-- Documentation covers:
-  - Tagging strategy  
-  - Storage class policies  
-  - Mapping of business questions (e.g., sentiment-performance correlation)
 - *Performed data cleaning to address missing values, correct data types, and remove duplicates:* AWS Glue DataBrew service used.
