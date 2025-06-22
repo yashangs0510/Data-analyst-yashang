@@ -18,67 +18,110 @@ The data was uploaded to an AWS S3 bucket as the raw input for the pipeline.
 
 ## Methodology
 
-## 1. Data Collection and Preparation
+### 1. 🔁 Data Ingestion Setup
 
-### Documentation Contribution
-- Contributed to **data lake architecture and analysis documentation**
-- Documentation covers:
-  - Tagging strategy  
-  - Storage class policies  
-  - Mapping of business questions (e.g., sentiment-performance correlation)
+- **Amazon S3 Bucket Creation**: 
+  - Initialized a versioned S3 bucket named `cov-raw-mah`.
+  - Data was organized using a time-based folder hierarchy (`year/quarter/month/week`) to support granular access and retention strategies.
+  
+- **Data Upload and Formats**:
+  - Raw business license data uploaded in both `.csv` and `.json` formats to accommodate varying ingestion and analysis needs.
+  - Daily write frequency and monthly read setup enabled automated refresh and stable performance.
 
-![image alt](https://github.com/yashangs0510/Data-analyst-yashang/blob/d0fb288c859414d855a4de9c336580b20ed32965/Images/Screenshot%202025-06-22%20115240.png)
+![image](https://github.com/yashangs0510/Data-analyst-yashang/blob/d1cffa871c4bfa5d9dd03499dfb751435b02c564/images/1.png)
+
+- **Security & Testing**:
+  - Created a dedicated security group `COV-VS-Mah` for controlled access.
+  - IAM roles and access analyzers were applied to manage permission boundaries.
+  - An EC2 instance (`COVVS`) was briefly used to test and validate ingestion scripts before transitioning to a fully serverless architecture.
+
+![image](https://github.com/yashangs0510/Data-analyst-yashang/blob/d1cffa871c4bfa5d9dd03499dfb751435b02c564/images/2.png)
+![image](https://github.com/yashangs0510/Data-analyst-yashang/blob/9d7925d02ff80a429046a14eeb26bdaea1492d7b/images/ec2.png)
+### 2. 🧹 Data Profiling and Cleaning (AWS Glue DataBrew)
+
+- **Profiling with DataBrew**:
+  - Dataset was profiled using AWS Glue DataBrew to assess data quality.
+  - Results showed 100% valid values across 22 columns with no missing data — confirming readiness for transformation.
+
+![image](https://github.com/yashangs0510/Data-analyst-yashang/blob/d1cffa871c4bfa5d9dd03499dfb751435b02c564/images/3.png)
+
+- **Cleaning and Transformation**:
+  - Designed a DataBrew recipe for column normalization, data type casting, trimming text, and renaming fields for clarity.
+  - Executed the recipe and exported clean datasets to a new S3 path for downstream analytics.
+
+![image](https://github.com/yashangs0510/Data-analyst-yashang/blob/d1cffa871c4bfa5d9dd03499dfb751435b02c564/images/4.png)
+
+- **Output Verification**:
+  - Cleaned datasets were validated against original business objectives, ensuring consistency, completeness, and format compliance.
+
+![image](https://github.com/yashangs0510/Data-analyst-yashang/blob/d1cffa871c4bfa5d9dd03499dfb751435b02c564/images/5.png)
+
+### 3. ⚙️ ETL Implementation (AWS Glue Jobs)
+
+- **ETL Job Design**:
+  - Created two jobs using AWS Glue Studio's visual interface:
+    - `COV-business-licence`: Initial cleansing of raw data.
+    - `cov-enriching-mah`: Transformation and enrichment for analysis (e.g., tagging business status).
+  
+![image](https://github.com/yashangs0510/Data-analyst-yashang/blob/9d7925d02ff80a429046a14eeb26bdaea1492d7b/images/6.png)
+
+- **Performance and Resources**:
+  - Used 10 DPUs per job to ensure efficient processing.
+  - Job runtime was optimized to under 2 minutes, with logs tracked via CloudWatch for visibility.
+
+![image](https://github.com/yashangs0510/Data-analyst-yashang/blob/9d7925d02ff80a429046a14eeb26bdaea1492d7b/images/7.png)
+
+- **Data Cataloging**:
+  - The outputs were registered in the AWS Glue Data Catalog (`cov-data-catalog-mah`) to enforce schema consistency.
+  - This enabled downstream access via Athena and BI tools.
+
+![image](https://github.com/yashangs0510/Data-analyst-yashang/blob/252c4a55023b6c860fe7417a5201d800f5c6dba8/images/Screenshot%202025-06-22%20131806.png)
+
+### 4. 🔍 Querying and Reporting (AWS Athena)
+
+- **Athena Integration**:
+  - Created external tables in Athena by querying the Data Catalog.
+  - Wrote serverless SQL queries to extract fields like `license_number`, `trade_name`, and `status`.
+
+- **Analytical Insights**:
+  - Retrieved 516 records representing historical trends, cancellations, and renewals.
+  - These queries informed city service decisions regarding business activity hotspots and seasonal fluctuations.
+
+- **Performance and Cost Control**:
+  - Leveraged Athena’s **pay-per-query model** to reduce overhead.
+  - Queries were partitioned and optimized for fast execution and minimal cost.
+
+![image](https://github.com/yashangs0510/Data-analyst-yashang/blob/252c4a55023b6c860fe7417a5201d800f5c6dba8/images/8.png)
+
+### 5. 📉 Data Evaluation and Monitoring
+
+- **Cost Evaluation**:
+  - Estimated yearly cost of $31.47 USD for the entire platform:
+    - **Amazon S3**: $6.03/year for storage and access
+    - **Glue DataBrew**: $25.44/year for data transformation
+  
+![image](https://github.com/yashangs0510/Data-analyst-yashang/blob/252c4a55023b6c860fe7417a5201d800f5c6dba8/images/9.png)
+![image](https://github.com/yashangs0510/Data-analyst-yashang/blob/252c4a55023b6c860fe7417a5201d800f5c6dba8/images/10.png)
+![image](https://github.com/yashangs0510/Data-analyst-yashang/blob/252c4a55023b6c860fe7417a5201d800f5c6dba8/images/11.png)
 
 
-- ## Folder Structure in S3
-- *Load the dataset using data analysis tools:* Secure Storage Setup (S3 Bucket) used
-- Set up **nine categorized folders** for structured HR datasets
+- **Monitoring with CloudWatch**:
+  - Set up a billing alarm to monitor usage, triggering alerts if costs exceed $50 in any 6-hour window.
 
-## S3 Bucket Configuration
-- Created **S3 bucket**: `hr-raw-mahh`
-- Hosted in **US East (N. Virginia)** region
+![image](https://github.com/yashangs0510/Data-analyst-yashang/blob/c14d05d4ac6ab59fc96f83059b95ca91ee6e64f5/images/12.png)
 
-![image alt](https://github.com/yashangs0510/Data-analyst-yashang/blob/c128efd10a7148e9ad777121aaa424e33b6dd19f/Screenshot%202025-06-22%20111848.png)
+### 6. 📁 Documentation and Deliverables
 
-## Security Configuration
-- Configured **security group** for instance access and data flow
+- **Visual Documentation**:
+  - Diagrams of the data lake architecture, job flowcharts, and DataBrew screenshots are stored in the `/docs` folder.
+  - Markdown files include transformation logic, SQL queries, cost breakdowns, and architecture justifications.
 
-![image alt](https://github.com/yashangs0510/Data-analyst-yashang/blob/6f8ad8aaa53b561dccddf0eca38febfb367d1d59/Images/Screenshot%202025-06-22%20114547.png)
+- **Version Control and Traceability**:
+  - GitHub is used to track all pipeline revisions, job logic, and documentation changes.
+  - Data lifecycle management and tagging strategies are documented to support auditability and compliance.
 
-- ## EC2 Instance Setup
-- Launched EC2 instance: **HRVS-MAH**
-- Attached a **30 GiB EBS** volume
+---
 
-![image alt](https://github.com/yashangs0510/Data-analyst-yashang/blob/6f8ad8aaa53b561dccddf0eca38febfb367d1d59/Images/Screenshot%202025-06-22%20114414.png)
+## ✅ Outcome
 
-## 2. Data Cleaning and Profiling
-
-### Data Cleaning Design using AWS Glue DataBrew
-- Analyzed raw HR data to identify transformation needs (e.g., missing values, format inconsistencies).
-- Designed cleaning workflows using Glue DataBrew’s no-code interface.
-- Mapped transformation steps to HR business questions (e.g., sentiment vs. performance).
-
-###  Data Cleaning Implementation
-- Created reusable Glue DataBrew projects and recipes for selected datasets.
-- Applied transformations such as:
-  - Dropping empty columns
-  - Standardizing text formats
-  - Deriving sentiment scores
-- Previewed results before full job execution.
-
-![image alt](https://github.com/yashangs0510/Data-analyst-yashang/blob/63c998c15989849acd8d33855df4248c2dca45e4/Images/Screenshot%202025-06-22%20120338.png)
-
-### 5. Job Execution and Output Storage
-- Executed jobs on demand — fully serverless (no provisioning required).
-- Output stored in a designated S3 bucket (`hr-cleaned-mahh`) for downstream analytics.
-- Validated results by cross-checking transformed datasets with initial requirements.
-
-![image alt](https://github.com/yashangs0510/Data-analyst-yashang/blob/63c998c15989849acd8d33855df4248c2dca45e4/Images/Screenshot%202025-06-22%20120352.png)
-
-### 2. S3 Cost Evaluation
-- Monitored usage and cost through AWS Cost Explorer and S3 Storage Class Analysis.
-- Compared costs across storage classes (Standard vs. Intelligent-Tiering vs. Glacier).
-- Estimated monthly storage costs for projected data volumes.
-- Documented findings and cost charts in the project report for optimization insights.
-
-![image alt](https://github.com/yashangs0510/Data-analyst-yashang/blob/79faf01097b3a589997aa26d12e4da338f368b18/Images/Screenshot%202025-06-22%20120511.png)
+This cloud-native platform enables the City of Vancouver to generate near real-time insights into animal business licensing trends. With low-cost ingestion, automated ETL, and serverless querying, the system supports data-driven urban governance and compliance monitoring — laying the foundation for scalable municipal analytics.
