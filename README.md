@@ -119,6 +119,89 @@ The data was uploaded to an AWS S3 bucket as the raw input for the pipeline.
 ![image](https://raw.githubusercontent.com/yashangs0510/Data-analyst-yashang/main/images/15.png)
 
 
+
+
 ## ✅ Outcome
 
 This cloud-native platform enables the City of Vancouver to generate near real-time insights into animal business licensing trends. With low-cost ingestion, automated ETL, and serverless querying, the system supports data-driven urban governance and compliance monitoring — laying the foundation for scalable municipal analytics.
+
+
+
+
+
+# 📘 AWS Portfolio Assignment – Yashang Singh
+
+### ✅ Module 1: AWS Deployment and Service Models
+
+- **Summary:** Compared deployment models (Public, Private, Hybrid) and service types (IaaS, PaaS, SaaS).
+- **Result:** Used a hybrid deployment with **EC2 (IaaS)** and **Elastic Beanstalk (PaaS)**.
+- **Explanation:** Combined control and scalability. EC2 offers flexibility while Beanstalk simplifies deployment for web applications.
+
+![image]()
+
+### 💰 Module 2: AWS Cost Analysis
+
+- **Summary:** Evaluated EC2 and S3 pricing across instance types and regions.
+- **Result:**
+  - **Spot Instances** for cost savings on flexible workloads
+  - **Reserved Instances** for steady usage
+  - Region-based savings (e.g., N. Virginia over Frankfurt)
+- **Explanation:** Strategic pricing selection ensures efficiency in both compute and storage costs.
+
+![image]()
+
+### 🌍 Module 3: AWS Global Infrastructure
+
+- **Summary:** Designed a high-availability global architecture.
+- **Result:**
+  - **S3 cross-region replication**
+  - **CloudFront** for global content delivery
+  - **Route 53** with latency-based routing
+- **Explanation:** Leveraged AWS’s global infrastructure to minimize downtime and latency.
+
+![image]()
+
+### 🔐 Module 4: AWS IAM
+
+- **Summary:** Configured IAM roles and policies for HR and Finance departments.
+- **Result:**
+  - Enforced **Least Privilege Access**
+  - Enabled **MFA**
+  - Used **Roles** for cross-account permissions
+- **Explanation:** Secure and controlled access prevents misuse and improves account hygiene.
+
+![image]()
+
+### 🛡️ Module 5: AWS VPC
+
+- **Summary:** Designed a secure 3-tier VPC architecture.
+- **Result:**
+  - **Public subnet:** Load Balancer, Bastion Host
+  - **Private subnet:** App and DB layers
+  - **NAT Gateway** for controlled internet access
+- **Explanation:** Followed AWS security best practices by isolating layers and controlling access.
+
+![image]()
+
+### ⚡ Module 6: AWS Lambda
+
+- **Summary:** Built a serverless image processing workflow triggered by S3.
+- **Result:**
+  - Auto-thumbnail creation
+  - Output stored in a separate bucket
+  - Near-zero cost with <1s execution
+- **Explanation:** Demonstrated event-driven, scalable architecture using serverless computing.
+
+![image]()
+
+### 💾 Module 7: AWS EBS
+
+- **Summary:** Tested EBS volume types for performance and backup.
+- **Result:**
+  - **gp3** for general workloads
+  - **io1** for high-IOPS DBs
+  - **Snapshots** for backups
+- **Explanation:** Matched storage type to workload; snapshots enabled disaster recovery planning.
+
+![image]()
+
