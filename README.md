@@ -222,14 +222,35 @@ This plan offered 24x7 access to cloud engineers, faster response times, and arc
 
 ### 🌍 Module 3: AWS Global Infrastructure
 
-- **Summary:** Designed a high-availability global architecture.
-- **Result:**
-  - **S3 cross-region replication**
-  - **CloudFront** for global content delivery
-  - **Route 53** with latency-based routing
-- **Explanation:** Leveraged AWS’s global infrastructure to minimize downtime and latency.
+- **Summary:** Focused on understanding AWS Regions, Availability Zones, Edge Locations, and how AWS designs global infrastructure for resilience, low latency, and compliance.
 
-![image]()
+---
+
+#### 🧪 Case Study #7: AWS Global Infrastructure
+
+**Result:**
+- Designed an architecture using **multiple regions** (e.g., N. Virginia and Tokyo) for redundancy.
+- Incorporated:
+  - **S3 Cross-Region Replication** to ensure data backup across continents
+  - **Route 53** for latency-based DNS routing
+  - **CloudFront** to distribute content globally via **Edge Locations**
+- Compared three infrastructure elements:
+  | Infrastructure Element | Dataset Location | Dataset Access | Dataset Privacy |
+  |------------------------|------------------|----------------|-----------------|
+  | **Regional Edge Cache** | Temporarily cached closer to users | Accelerated data delivery | Minimal data stored |
+  | **Edge Location** | Cached for local delivery | Optimized access via low-latency | Encrypted storage |
+  | **Region** | Fully hosted AWS region | All services (storage, compute) | Compliant and secure |
+
+**Explanation:**  
+By leveraging AWS’s global network, the architecture ensures low-latency content delivery, redundancy, and regulatory compliance. Users get faster access regardless of geographic location, and critical datasets remain secure and highly available.
+
+---
+
+#### ✅ Module 3 Knowledge Check
+
+- **Score:** 100%
+
+![image](https://raw.githubusercontent.com/yashangs0510/Data-analyst-yashang/main/images/m3.drawio.png)
 
 ### 🔐 Module 4: AWS IAM
 
