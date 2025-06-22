@@ -137,7 +137,7 @@ This cloud-native platform enables the City of Vancouver to generate near real-t
 - **Result:** Used a hybrid deployment with **EC2 (IaaS)** and **Elastic Beanstalk (PaaS)**.
 - **Explanation:** Combined control and scalability. EC2 offers flexibility while Beanstalk simplifies deployment for web applications.
 
-![image]()
+![image](https://raw.githubusercontent.com/yashangs0510/Data-analyst-yashang/main/images/m1.png)
 
 ### 💰 Module 2: AWS Cost Analysis
 
