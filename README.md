@@ -28,7 +28,7 @@ The data was uploaded to an AWS S3 bucket as the raw input for the pipeline.
   - Raw business license data uploaded in both `.csv` and `.json` formats to accommodate varying ingestion and analysis needs.
   - Daily write frequency and monthly read setup enabled automated refresh and stable performance.
 
-![image](https://github.com/yashangs0510/Data-analyst-yashang/blob/d1cffa871c4bfa5d9dd03499dfb751435b02c564/images/1.png)
+![S3 Bucket Screenshot](https://raw.githubusercontent.com/yashangs0510/Data-analyst-yashang/main/images/1.png)
 
 - **Security & Testing**:
   - Created a dedicated security group `COV-VS-Mah` for controlled access.
