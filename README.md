@@ -35,7 +35,7 @@ The data was uploaded to an AWS S3 bucket as the raw input for the pipeline.
   - IAM roles and access analyzers were applied to manage permission boundaries.
   - An EC2 instance (`COVVS`) was briefly used to test and validate ingestion scripts before transitioning to a fully serverless architecture.
 
-![image](https://raw.githubusercontent.com/yashangs0510/Data-analyst-yashang/blob/d1cffa871c4bfa5d9dd03499dfb751435b02c564/images/2.png)
+![image](https://raw.githubusercontent.com/yashangs0510/Data-analyst-yashang/main/images/2.png)
 ![image](https://raw.githubusercontent.com/yashangs0510/Data-analyst-yashang/blob/9d7925d02ff80a429046a14eeb26bdaea1492d7b/images/ec2.png)
 ### 2. 🧹 Data Profiling and Cleaning (AWS Glue DataBrew)
 
