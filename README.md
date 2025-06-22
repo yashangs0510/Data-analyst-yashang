@@ -253,46 +253,131 @@ By leveraging AWS’s global network, the architecture ensures low-latency conte
 ![image](https://raw.githubusercontent.com/yashangs0510/Data-analyst-yashang/main/images/m3.drawio.png)
 
 ### 🔐 Module 4: AWS IAM
+ 
+- **Summary:** Focused on access control, shared responsibility model, and hands-on IAM configuration using AWS best practices.
 
-- **Summary:** Configured IAM roles and policies for HR and Finance departments.
-- **Result:**
-  - Enforced **Least Privilege Access**
-  - Enabled **MFA**
-  - Used **Roles** for cross-account permissions
-- **Explanation:** Secure and controlled access prevents misuse and improves account hygiene.
+---
 
-![image]()
+#### 🧪 Case Study #8: Who Is Responsible?
+
+| Layer       | UCW Responsibility                                  | AWS Responsibility                                            |
+|-------------|-----------------------------------------------------|---------------------------------------------------------------|
+| **EC2**     | Installing, configuring, and managing instances      | Maintaining physical infrastructure and virtualization layer  |
+| **Platform**| Managing runtime, middleware, and OS updates        | N/A                                                           |
+| **Software**| Developing and deploying secure code                | N/A                                                           |
+| **Dataset** | Ensuring secure use and classification of data      | Secure storage and compliance of underlying infrastructure    |
+
+**Explanation:**  
+The case highlights the **Shared Responsibility Model**. While AWS secures the cloud itself (hardware, infrastructure), the user (UCW in this case) is responsible for **securing what is in the cloud**, including access policies, patching, and data classification.
+
+---
+
+#### 🧪 Case Study #9: IAM Practice – Lab 1
+
+**Result:**
+- Created IAM users, groups, and roles
+- Attached custom policies for **least privilege access**
+- Enabled **MFA (Multi-Factor Authentication)**
+- Verified policies through **permission simulation**
+
+**Explanation:**  
+This hands-on practice demonstrated secure identity management:
+- **Groups** simplified permission management across users
+- **Policies** enforced restricted access
+- **MFA** strengthened security posture for privileged accounts
+
+---
+
+#### ✅ Module 4 Knowledge Check
+
+- **Score:** 100%
+
+![image](https://raw.githubusercontent.com/yashangs0510/Data-analyst-yashang/main/images/m4.drawio.png)
 
 ### 🛡️ Module 5: AWS VPC
 
-- **Summary:** Designed a secure 3-tier VPC architecture.
-- **Result:**
-  - **Public subnet:** Load Balancer, Bastion Host
-  - **Private subnet:** App and DB layers
-  - **NAT Gateway** for controlled internet access
-- **Explanation:** Followed AWS security best practices by isolating layers and controlling access.
+- **Summary:** This module focused on networking basics, custom VPC creation, subnetting, routing, and securing cloud resources with firewalls and route tables.
 
-![image]()
+---
+
+#### 🧪 Case Study #10: Build Your VPC (Lab 2)
+
+**Result:**
+- Created a **custom VPC** with:
+  - One public subnet
+  - One private subnet
+  - Associated route tables and internet gateway
+- Verified connectivity and subnet association via the VPC dashboard.
+
+**Explanation:**  
+This lab demonstrated foundational networking setup in AWS. By separating public and private subnets, it enforces security boundaries:
+- **Public subnet** for internet-facing components (e.g., load balancers, bastion hosts)
+- **Private subnet** for internal application and database layers  
+Security groups and route tables were correctly applied to control traffic flow between components.
+
+---
+
+#### ✅ Module 5 Knowledge Check
+
+- **Score:** 80%
+
+![image](https://raw.githubusercontent.com/yashangs0510/Data-analyst-yashang/main/images/m5.drawio.png)
 
 ### ⚡ Module 6: AWS Lambda
 
-- **Summary:** Built a serverless image processing workflow triggered by S3.
-- **Result:**
-  - Auto-thumbnail creation
-  - Output stored in a separate bucket
-  - Near-zero cost with <1s execution
-- **Explanation:** Demonstrated event-driven, scalable architecture using serverless computing.
+- **Summary:** Introduced to serverless computing concepts, AWS Lambda architecture, triggers, permissions, and cost-effectiveness in event-driven design.
 
-![image]()
+---
+
+#### 🧪 Case Study #11: Create an AWS Lambda Function
+
+**Result:**
+- Successfully created and deployed a Lambda function named `myLambdaAPI`.
+- The function was triggered via test events and executed properly without the need for server provisioning.
+- Configuration included runtime selection, permissions, and code inline editor.
+
+**Explanation:**  
+This hands-on activity showcased how **AWS Lambda** enables developers to run code in response to events (e.g., file uploads, API calls) **without managing infrastructure**. Key advantages observed:
+- **Automatic scaling**
+- **Sub-second billing**
+- **Tight integration** with other AWS services (e.g., CloudWatch, API Gateway)
+
+The Lambda function performed simple logic execution and validated how serverless architecture removes the burden of provisioning and scaling.
+
+---
+
+#### ✅ Module 6 Knowledge Check
+
+- **Score:** 90%
+
+![image](https://raw.githubusercontent.com/yashangs0510/Data-analyst-yashang/main/images/m6.drawio.png)
 
 ### 💾 Module 7: AWS EBS
 
-- **Summary:** Tested EBS volume types for performance and backup.
-- **Result:**
-  - **gp3** for general workloads
-  - **io1** for high-IOPS DBs
-  - **Snapshots** for backups
-- **Explanation:** Matched storage type to workload; snapshots enabled disaster recovery planning.
+-- **Summary:** Introduced to serverless computing concepts, AWS Lambda architecture, triggers, permissions, and cost-effectiveness in event-driven design.
 
-![image]()
+---
+
+#### 🧪 Case Study #11: Create an AWS Lambda Function
+
+**Result:**
+- Successfully created and deployed a Lambda function named `myLambdaAPI`.
+- The function was triggered via test events and executed properly without the need for server provisioning.
+- Configuration included runtime selection, permissions, and code inline editor.
+
+**Explanation:**  
+This hands-on activity showcased how **AWS Lambda** enables developers to run code in response to events (e.g., file uploads, API calls) **without managing infrastructure**. Key advantages observed:
+- **Automatic scaling**
+- **Sub-second billing**
+- **Tight integration** with other AWS services (e.g., CloudWatch, API Gateway)
+
+The Lambda function performed simple logic execution and validated how serverless architecture removes the burden of provisioning and scaling.
+
+---
+
+#### ✅ Module 6 Knowledge Check
+
+- **Score:** 90%
+
+![image](https://raw.githubusercontent.com/yashangs0510/Data-analyst-yashang/main/images/m7.drawio.png)
 
