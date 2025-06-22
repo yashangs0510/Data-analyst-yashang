@@ -112,15 +112,12 @@ The data was uploaded to an AWS S3 bucket as the raw input for the pipeline.
 
 ### 6. 📁 Documentation and Deliverables
 
-- **Visual Documentation**:
-  - Diagrams of the data lake architecture, job flowcharts, and DataBrew screenshots are stored in the `/docs` folder.
-  - Markdown files include transformation logic, SQL queries, cost breakdowns, and architecture justifications.
-
 - **Version Control and Traceability**:
   - GitHub is used to track all pipeline revisions, job logic, and documentation changes.
   - Data lifecycle management and tagging strategies are documented to support auditability and compliance.
 
----
+![image](https://raw.githubusercontent.com/yashangs0510/Data-analyst-yashang/main/images/15.png)
+
 
 ## ✅ Outcome
 
