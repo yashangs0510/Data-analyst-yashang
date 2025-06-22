@@ -28,6 +28,8 @@ The data was uploaded to an AWS S3 bucket as the raw input for the pipeline.
 - Created **S3 bucket**: `hr-raw-mahh`
 - Hosted in **US East (N. Virginia)** region
 
+Screenshot 2025-06-22 111848.png
+
 - ## EC2 Instance Setup
 - Launched EC2 instance: **HRVS-MAH**
 - Attached a **30 GiB EBS** volume
