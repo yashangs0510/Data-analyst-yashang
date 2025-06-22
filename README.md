@@ -34,8 +34,12 @@ The data was uploaded to an AWS S3 bucket as the raw input for the pipeline.
 - Launched EC2 instance: **HRVS-MAH**
 - Attached a **30 GiB EBS** volume
 
+![image alt](https://github.com/yashangs0510/Data-analyst-yashang/blob/6f8ad8aaa53b561dccddf0eca38febfb367d1d59/Images/Screenshot%202025-06-22%20114414.png)
+
 ## Security Configuration
 - Configured **security group** for instance access and data flow
+
+![image alt](https://github.com/yashangs0510/Data-analyst-yashang/blob/6f8ad8aaa53b561dccddf0eca38febfb367d1d59/Images/Screenshot%202025-06-22%20114547.png)
 
 ## Documentation Contribution
 - Contributed to **data lake architecture and analysis documentation**
