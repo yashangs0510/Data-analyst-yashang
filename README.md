@@ -169,14 +169,56 @@ This cloud-native platform enables the City of Vancouver to generate near real-t
 
 ### 💰 Module 2: AWS Cost Analysis
 
-- **Summary:** Evaluated EC2 and S3 pricing across instance types and regions.
-- **Result:**
-  - **Spot Instances** for cost savings on flexible workloads
-  - **Reserved Instances** for steady usage
-  - Region-based savings (e.g., N. Virginia over Frankfurt)
-- **Explanation:** Strategic pricing selection ensures efficiency in both compute and storage costs.
+- **Summary:** Focused on AWS pricing fundamentals, total cost of ownership (TCO), support plans, and usage of AWS Pricing Calculator.
 
-![image]()
+---
+
+#### 🧪 Case Study #4: Total Cost of Ownership – Delaware North
+
+**Result:**  
+Using AWS reduced upfront infrastructure investments, minimized operational overhead, and provided measurable cost savings in terms of:
+- Reduced physical server maintenance
+- Lower electricity and hardware costs
+- Decreased need for in-house IT management
+
+**Explanation:**  
+AWS shifts costs from capital expenditure (CapEx) to operational expenditure (OpEx), allowing businesses to pay for what they use. Delaware North benefited by reducing overprovisioning and scaling based on actual demand.
+
+---
+
+#### 🧪 Case Study #5: AWS Pricing Calculator
+
+**Result:**  
+Used AWS Pricing Calculator to estimate monthly costs for three scenarios:
+- **New Workload**
+- **Lift-and-Shift Migration**
+- **Optimized Architecture**
+
+Each pricing estimate showed:
+- Clear hourly/monthly breakdowns
+- Regional cost variations
+- Service-specific billing
+
+**Explanation:**  
+The calculator provided cost transparency. It helped plan for budgeting and cost optimization by comparing usage patterns, regions, and reserved vs on-demand pricing options.
+
+---
+
+#### 🧪 Case Study #6: Support Plan
+
+**Result:**  
+For the HR department, the **AWS Business Support Plan** was selected.
+
+**Justification:**  
+This plan offered 24x7 access to cloud engineers, faster response times, and architectural guidance – essential for business-critical workloads and ensuring compliance in HR systems.
+
+---
+
+#### ✅ Module 2 Knowledge Check
+
+- **Score:** 100%
+
+![image](https://raw.githubusercontent.com/yashangs0510/Data-analyst-yashang/main/images/m2.drawio.png)
 
 ### 🌍 Module 3: AWS Global Infrastructure
 
