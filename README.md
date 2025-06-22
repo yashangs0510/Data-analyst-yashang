@@ -20,5 +20,25 @@ The data was uploaded to an AWS S3 bucket as the raw input for the pipeline.
 
 ### 1. Data Collection and Preparation
 
-- *Load the dataset using data analysis tools:* Secure Storage Setup (S3 Bucket) used  
-- *Performed data cleaning to address missing values, correct data types, and remove duplicates:* AWS Glue DataBrew service used
+- *Load the dataset using data analysis tools:* Secure Storage Setup (S3 Bucket) used
+- ## Folder Structure in S3
+- Set up **nine categorized folders** for structured HR datasets
+
+## S3 Bucket Configuration
+- Created **S3 bucket**: `hr-raw-mahh`
+- Hosted in **US East (N. Virginia)** region
+
+- ## EC2 Instance Setup
+- Launched EC2 instance: **HRVS-MAH**
+- Attached a **30 GiB EBS** volume
+
+## Security Configuration
+- Configured **security group** for instance access and data flow
+
+## Documentation Contribution
+- Contributed to **data lake architecture and analysis documentation**
+- Documentation covers:
+  - Tagging strategy  
+  - Storage class policies  
+  - Mapping of business questions (e.g., sentiment-performance correlation)
+- *Performed data cleaning to address missing values, correct data types, and remove duplicates:* AWS Glue DataBrew service used.
