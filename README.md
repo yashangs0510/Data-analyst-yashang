@@ -131,11 +131,39 @@ This cloud-native platform enables the City of Vancouver to generate near real-t
 
 # 📘 AWS Portfolio Assignment – Yashang Singh
 
+
 ### ✅ Module 1: AWS Deployment and Service Models
 
-- **Summary:** Compared deployment models (Public, Private, Hybrid) and service types (IaaS, PaaS, SaaS).
-- **Result:** Used a hybrid deployment with **EC2 (IaaS)** and **Elastic Beanstalk (PaaS)**.
-- **Explanation:** Combined control and scalability. EC2 offers flexibility while Beanstalk simplifies deployment for web applications.
+- **Summary:** Explored the evolution from traditional IT infrastructure to cloud computing and understood cloud service and deployment models.
+
+- **Case Study #1: Traditional vs Cloud Computing**
+  | Traditional Computing | Cloud Computing |
+  |------------------------|------------------|
+  | On-premise servers | Internet-based resources |
+  | High CapEx (upfront costs) | Low CapEx, pay-as-you-go |
+  | Long provisioning time | Quick provisioning |
+
+  **Explanation:** Traditional IT requires large investments in hardware and maintenance. Cloud computing enables cost efficiency and speed by offering scalable, on-demand infrastructure.
+
+- **Case Study #2: Cloud Deployment Models**
+  - **Public Cloud:** Fully hosted by cloud providers, accessible via the internet
+  - **Private Cloud:** Internal or vendor-hosted for exclusive use
+  - **Hybrid Cloud:** Combines public and private for flexibility
+  - **Community Cloud:** Shared across organizations with common needs
+
+  **Explanation:** The student chose a **Hybrid Cloud** model, balancing security for sensitive tasks (private) and scalability for public-facing apps (public).
+
+- **Case Study #3: Cloud Service Models**
+  | Model | Control | Responsibility |
+  |-------|---------|----------------|
+  | IaaS  | High    | User manages OS, runtime, app |
+  | PaaS  | Medium  | User manages app & data |
+  | SaaS  | Low     | Vendor manages everything |
+
+  **Explanation:** EC2 (IaaS) was chosen for fine-grained control, and Elastic Beanstalk (PaaS) for simplified deployment. This shows thoughtful application of service models.
+
+- **Module 1 Knowledge Check:**
+  ✅ **Score: 100%** 
 
 ![image](https://raw.githubusercontent.com/yashangs0510/Data-analyst-yashang/main/images/m1.png)
 
