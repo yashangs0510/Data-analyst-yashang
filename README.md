@@ -156,14 +156,17 @@ Traditional IT requires large investments in hardware and maintenance. Cloud com
 
   **Explanation:** The student chose a **Hybrid Cloud** model, balancing security for sensitive tasks (private) and scalability for public-facing apps (public).
 
-- **Case Study #3: Cloud Service Models**
-  | Model | Control | Responsibility |
-  |-------|---------|----------------|
-  | IaaS  | High    | User manages OS, runtime, app |
-  | PaaS  | Medium  | User manages app & data |
-  | SaaS  | Low     | Vendor manages everything |
+#### 🧪 Case Study #3: Cloud Service Models
 
-  **Explanation:** EC2 (IaaS) was chosen for fine-grained control, and Elastic Beanstalk (PaaS) for simplified deployment. This shows thoughtful application of service models.
+| Model | Control Level | Responsibility                         |
+|-------|---------------|------------------------------------------|
+| IaaS  | High          | User manages OS, runtime, application   |
+| PaaS  | Medium        | User manages app and data               |
+| SaaS  | Low           | Vendor manages everything               |
+
+**Explanation:**  
+EC2 (IaaS) was chosen for fine-grained control, and Elastic Beanstalk (PaaS) for simplified deployment. This shows thoughtful application of service models.
+
 
 - **Module 1 Knowledge Check:**
   ✅ **Score: 100%** 
@@ -238,16 +241,16 @@ This plan offered 24x7 access to cloud engineers, faster response times, and arc
   - **Route 53** for latency-based DNS routing
   - **CloudFront** to distribute content globally via **Edge Locations**
 - Compared three infrastructure elements:
-  | Infrastructure Element | Dataset Location | Dataset Access | Dataset Privacy |
-  |------------------------|------------------|----------------|-----------------|
-  | **Regional Edge Cache** | Temporarily cached closer to users | Accelerated data delivery | Minimal data stored |
-  | **Edge Location** | Cached for local delivery | Optimized access via low-latency | Encrypted storage |
-  | **Region** | Fully hosted AWS region | All services (storage, compute) | Compliant and secure |
+- 
+| Infrastructure Element | Dataset Location                | Dataset Access                   | Dataset Privacy            |
+|------------------------|----------------------------------|-----------------------------------|-----------------------------|
+| Regional Edge Cache    | Temporarily cached closer to users | Accelerated data delivery         | Minimal data stored         |
+| Edge Location          | Cached for local delivery         | Optimized access via low-latency  | Encrypted storage           |
+| Region                 | Fully hosted AWS region           | All services (storage, compute)   | Compliant and secure        |
 
 **Explanation:**  
 By leveraging AWS’s global network, the architecture ensures low-latency content delivery, redundancy, and regulatory compliance. Users get faster access regardless of geographic location, and critical datasets remain secure and highly available.
 
----
 
 #### ✅ Module 3 Knowledge Check
 
