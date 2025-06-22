@@ -136,14 +136,17 @@ This cloud-native platform enables the City of Vancouver to generate near real-t
 
 - **Summary:** Explored the evolution from traditional IT infrastructure to cloud computing and understood cloud service and deployment models.
 
-- **Case Study #1: Traditional vs Cloud Computing**
-  | Traditional Computing | Cloud Computing |
-  |------------------------|------------------|
-  | On-premise servers | Internet-based resources |
-  | High CapEx (upfront costs) | Low CapEx, pay-as-you-go |
-  | Long provisioning time | Quick provisioning |
+#### 🧪 Case Study #1: Traditional vs Cloud Computing
 
-  **Explanation:** Traditional IT requires large investments in hardware and maintenance. Cloud computing enables cost efficiency and speed by offering scalable, on-demand infrastructure.
+| Criteria        | Traditional Computing           | Cloud Computing                 |
+|----------------|----------------------------------|----------------------------------|
+| Infrastructure | On-premise servers               | Internet-based resources         |
+| Cost Structure | High CapEx (upfront costs)       | Low CapEx, pay-as-you-go         |
+| Provisioning   | Long provisioning time           | Quick provisioning               |
+
+**Explanation:**  
+Traditional IT requires large investments in hardware and maintenance. Cloud computing enables cost efficiency and speed by offering scalable, on-demand infrastructure.
+
 
 - **Case Study #2: Cloud Deployment Models**
   - **Public Cloud:** Fully hosted by cloud providers, accessible via the internet
