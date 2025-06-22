@@ -35,26 +35,26 @@ The data was uploaded to an AWS S3 bucket as the raw input for the pipeline.
   - IAM roles and access analyzers were applied to manage permission boundaries.
   - An EC2 instance (`COVVS`) was briefly used to test and validate ingestion scripts before transitioning to a fully serverless architecture.
 
-![image](https://github.com/yashangs0510/Data-analyst-yashang/blob/d1cffa871c4bfa5d9dd03499dfb751435b02c564/images/2.png)
-![image](https://github.com/yashangs0510/Data-analyst-yashang/blob/9d7925d02ff80a429046a14eeb26bdaea1492d7b/images/ec2.png)
+![image](https://raw.githubusercontent.com/yashangs0510/Data-analyst-yashang/blob/d1cffa871c4bfa5d9dd03499dfb751435b02c564/images/2.png)
+![image](https://raw.githubusercontent.com/yashangs0510/Data-analyst-yashang/blob/9d7925d02ff80a429046a14eeb26bdaea1492d7b/images/ec2.png)
 ### 2. 🧹 Data Profiling and Cleaning (AWS Glue DataBrew)
 
 - **Profiling with DataBrew**:
   - Dataset was profiled using AWS Glue DataBrew to assess data quality.
   - Results showed 100% valid values across 22 columns with no missing data — confirming readiness for transformation.
 
-![image](https://github.com/yashangs0510/Data-analyst-yashang/blob/d1cffa871c4bfa5d9dd03499dfb751435b02c564/images/3.png)
+![image](https://raw.githubusercontent.com/yashangs0510/Data-analyst-yashang/blob/d1cffa871c4bfa5d9dd03499dfb751435b02c564/images/3.png)
 
 - **Cleaning and Transformation**:
   - Designed a DataBrew recipe for column normalization, data type casting, trimming text, and renaming fields for clarity.
   - Executed the recipe and exported clean datasets to a new S3 path for downstream analytics.
 
-![image](https://github.com/yashangs0510/Data-analyst-yashang/blob/d1cffa871c4bfa5d9dd03499dfb751435b02c564/images/4.png)
+![image](https://raw.githubusercontent.com/yashangs0510/Data-analyst-yashang/blob/d1cffa871c4bfa5d9dd03499dfb751435b02c564/images/4.png)
 
 - **Output Verification**:
   - Cleaned datasets were validated against original business objectives, ensuring consistency, completeness, and format compliance.
 
-![image](https://github.com/yashangs0510/Data-analyst-yashang/blob/d1cffa871c4bfa5d9dd03499dfb751435b02c564/images/5.png)
+![image](https://raw.githubusercontent.com/yashangs0510/Data-analyst-yashang/blob/d1cffa871c4bfa5d9dd03499dfb751435b02c564/images/5.png)
 
 ### 3. ⚙️ ETL Implementation (AWS Glue Jobs)
 
@@ -63,19 +63,19 @@ The data was uploaded to an AWS S3 bucket as the raw input for the pipeline.
     - `COV-business-licence`: Initial cleansing of raw data.
     - `cov-enriching-mah`: Transformation and enrichment for analysis (e.g., tagging business status).
   
-![image](https://github.com/yashangs0510/Data-analyst-yashang/blob/9d7925d02ff80a429046a14eeb26bdaea1492d7b/images/6.png)
+![image](https://raw.githubusercontent.com/yashangs0510/Data-analyst-yashang/blob/9d7925d02ff80a429046a14eeb26bdaea1492d7b/images/6.png)
 
 - **Performance and Resources**:
   - Used 10 DPUs per job to ensure efficient processing.
   - Job runtime was optimized to under 2 minutes, with logs tracked via CloudWatch for visibility.
 
-![image](https://github.com/yashangs0510/Data-analyst-yashang/blob/9d7925d02ff80a429046a14eeb26bdaea1492d7b/images/7.png)
+![image](https://raw.githubusercontent.com/yashangs0510/Data-analyst-yashang/blob/9d7925d02ff80a429046a14eeb26bdaea1492d7b/images/7.png)
 
 - **Data Cataloging**:
   - The outputs were registered in the AWS Glue Data Catalog (`cov-data-catalog-mah`) to enforce schema consistency.
   - This enabled downstream access via Athena and BI tools.
 
-![image](https://github.com/yashangs0510/Data-analyst-yashang/blob/252c4a55023b6c860fe7417a5201d800f5c6dba8/images/Screenshot%202025-06-22%20131806.png)
+![image](https://raw.githubusercontent.com/yashangs0510/Data-analyst-yashang/blob/252c4a55023b6c860fe7417a5201d800f5c6dba8/images/Screenshot%202025-06-22%20131806.png)
 
 ### 4. 🔍 Querying and Reporting (AWS Athena)
 
@@ -91,7 +91,7 @@ The data was uploaded to an AWS S3 bucket as the raw input for the pipeline.
   - Leveraged Athena’s **pay-per-query model** to reduce overhead.
   - Queries were partitioned and optimized for fast execution and minimal cost.
 
-![image](https://github.com/yashangs0510/Data-analyst-yashang/blob/252c4a55023b6c860fe7417a5201d800f5c6dba8/images/8.png)
+![image](https://raw.githubusercontent.com/yashangs0510/Data-analyst-yashang/blob/252c4a55023b6c860fe7417a5201d800f5c6dba8/images/8.png)
 
 ### 5. 📉 Data Evaluation and Monitoring
 
@@ -100,15 +100,15 @@ The data was uploaded to an AWS S3 bucket as the raw input for the pipeline.
     - **Amazon S3**: $6.03/year for storage and access
     - **Glue DataBrew**: $25.44/year for data transformation
   
-![image](https://github.com/yashangs0510/Data-analyst-yashang/blob/252c4a55023b6c860fe7417a5201d800f5c6dba8/images/9.png)
-![image](https://github.com/yashangs0510/Data-analyst-yashang/blob/252c4a55023b6c860fe7417a5201d800f5c6dba8/images/10.png)
-![image](https://github.com/yashangs0510/Data-analyst-yashang/blob/252c4a55023b6c860fe7417a5201d800f5c6dba8/images/11.png)
+![image](https://raw.githubusercontent.com/yashangs0510/Data-analyst-yashang/blob/252c4a55023b6c860fe7417a5201d800f5c6dba8/images/9.png)
+![image](https://raw.githubusercontent.com/yashangs0510/Data-analyst-yashang/blob/252c4a55023b6c860fe7417a5201d800f5c6dba8/images/10.png)
+![image](https://raw.githubusercontent.com/yashangs0510/Data-analyst-yashang/blob/252c4a55023b6c860fe7417a5201d800f5c6dba8/images/11.png)
 
 
 - **Monitoring with CloudWatch**:
   - Set up a billing alarm to monitor usage, triggering alerts if costs exceed $50 in any 6-hour window.
 
-![image](https://github.com/yashangs0510/Data-analyst-yashang/blob/c14d05d4ac6ab59fc96f83059b95ca91ee6e64f5/images/12.png)
+![image](https://raw.githubusercontent.com/yashangs0510/Data-analyst-yashang/blob/c14d05d4ac6ab59fc96f83059b95ca91ee6e64f5/images/12.png)
 
 ### 6. 📁 Documentation and Deliverables
 
