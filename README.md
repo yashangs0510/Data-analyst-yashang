@@ -381,7 +381,7 @@ The Lambda function performed simple logic execution and validated how serverles
 
 ---
 
-#### ✅ Module 6 Knowledge Check
+#### ✅ Module 7 Knowledge Check
 
 - **Score:** 90%
 
